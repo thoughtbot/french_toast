@@ -1,0 +1,9 @@
+<h1>Articles</h1>
+
+<article>
+  <% @articles.each do |article| %>
+    <h1><%= article.title %></h1>
+  <% end %>
+</article>
+
+<%= link_to "Add article", new_article_path, class: "c-button" %>

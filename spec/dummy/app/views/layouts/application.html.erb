@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="ROBOTS" content="NOODP" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>A Title</title>
+  <%= stylesheet_link_tag :application, media: "all" %>
+  <%= csrf_meta_tags %>
+  <%= action_cable_meta_tag %>
+</head>
+<body>
+  <nav class="c-app-nav" role="navigation">
+    <div class="p-container">
+      <%= link_to t("titles.application"), root_path %>
+    </div>
+  </nav>
+
+  <main role="main">
+    <div class="p-container">
+      <%= render "flashes" -%>
+      <%= yield %>
+    </div>
+  </main>
+
+  <%= render "javascript" %>
+  <%= render "css_overrides" %>
+</body>
+</html>

@@ -1,0 +1,22 @@
+source "https://rubygems.org"
+
+gem "jquery-rails"
+gem "puma"
+gem "rails", "~> 5.0.0"
+gem "redis"
+gem "sass-rails", "~> 5.0"
+gem "simple_form"
+gem "sprockets", ">= 3.0.0"
+gem "sqlite3"
+
+group :development, :test do
+  gem "dotenv-rails"
+  gem "factory_girl_rails"
+  gem "rspec-rails", "~> 3.5.0.beta4"
+end
+
+group :test do
+  gem "capybara-webkit"
+  gem "database_cleaner"
+  gem "timecop"
+end

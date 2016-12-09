@@ -1,0 +1,7 @@
+<%= simple_form_for @article do |form| %>
+  <%= form.input :author %>
+  <%= form.input :title %>
+  <%= form.input :body %>
+  <%= form.input :tags %>
+  <%= form.submit "Create article" %>
+<% end %>
