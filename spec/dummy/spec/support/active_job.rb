@@ -7,6 +7,8 @@ module ActiveJob
       end
 
       def run_jobs
+        @jobs ||= []
+
         while job = @jobs.pop do
           Base.execute(job.serialize)
         end

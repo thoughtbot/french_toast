@@ -4,29 +4,31 @@ describe ArticleJob do
   describe "#perform" do
     context "with valid input" do
       it "creates an article" do
-        params = attributes_for(:article)
+        stub_notifier!
 
-        ArticleJob.new.perform("teh snappy", params)
+        ArticleJob.new.perform(session_key, article_params)
 
-        expect(Article.first).to have_attributes(params)
+        expect(Article.first).to have_attributes(article_params)
       end
 
       it "notifies the channel" do
-        session_key = "iamasessionkey"
+        notifier = stub_notifier!
         article = instance_double(Article)
-        notifier = instance_double(FrenchToast::Notifier, notify: nil)
-        params = attributes_for(:article)
-        allow(Article).to receive(:create!).and_return(article)
-        allow(FrenchToast::Notifier).
-          to receive(:new).
-          with(session_key).
-          and_return(notifier)
+        allow(Article).to receive(:create!).with(article_params).and_return(article)
 
-        ArticleJob.new.perform(session_key, params)
+        ArticleJob.new.perform(session_key, article_params)
 
-        expect(notifier).
-          to have_received(:notify).with("Your article has been processed")
+        expect(notifier).to have_received(:notify).with(article_params)
       end
+
+      def stub_notifier!
+        instance_double(FrenchToast::Notifier, notify: nil).tap do |notifier|
+          allow(FrenchToast::Notifier).to receive(:new).and_return(notifier)
+        end
+      end
+
+      let(:article_params) { attributes_for(:article) }
+      let(:session_key) { "iamasessionkey" }
     end
   end
 end

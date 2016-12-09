@@ -18,6 +18,7 @@ end
 
 group :test do
   gem "capybara-webkit"
+  gem "email_spec"
   gem "database_cleaner"
   gem "timecop"
 end

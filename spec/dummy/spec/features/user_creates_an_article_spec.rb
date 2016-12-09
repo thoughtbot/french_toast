@@ -9,6 +9,7 @@ feature "User creates an article", :js do
     fill_in :article_body, with: "This is real news"
     fill_in :article_author, with: "Bannon"
     fill_in :article_tags, with: "facts, news, totally real"
+    fill_in :article_email, with: "author@example.com"
     click_button "Create article"
 
     expect(page).to have_content "Articles"
