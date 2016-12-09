@@ -14,10 +14,10 @@ describe ArticleJob do
       it "notifies the channel" do
         session_key = "iamasessionkey"
         article = instance_double(Article)
-        notifier = instance_double(Notifier, notify: nil)
+        notifier = instance_double(FrenchToast::Notifier, notify: nil)
         params = attributes_for(:article)
         allow(Article).to receive(:create!).and_return(article)
-        allow(Notifier).
+        allow(FrenchToast::Notifier).
           to receive(:new).
           with(session_key).
           and_return(notifier)

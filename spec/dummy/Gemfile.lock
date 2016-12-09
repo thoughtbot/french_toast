@@ -1,3 +1,8 @@
+PATH
+  remote: ../..
+  specs:
+    french_toast (0.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -171,6 +176,7 @@ DEPENDENCIES
   database_cleaner
   dotenv-rails
   factory_girl_rails
+  french_toast!
   jquery-rails
   puma
   rails (~> 5.0.0)
