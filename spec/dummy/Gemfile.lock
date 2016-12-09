@@ -2,6 +2,7 @@ PATH
   remote: ../..
   specs:
     french_toast (0.1.0)
+      rails (~> 5.0)
 
 GEM
   remote: https://rubygems.org/

@@ -1,10 +1,11 @@
-require "rails/generators/base"
-require "rails/generators/migration"
+require "rails/generators"
+require "rails/generators/active_record"
 
 module FrenchToast
   module Generators
-    class InstallGenerator < Rail::Generators::Base
-      include Rails::Generators::Migration
+    class InstallGenerator < Rails::Generators::Base
+      include ActiveRecord::Generators::Migration
+
       source_root File.expand_path("../templates", __FILE__)
 
       def copy_last_notification_migration
