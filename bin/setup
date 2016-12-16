@@ -2,4 +2,4 @@
 
 bundle install
 
-(cd spec/dummy && bundle)
+(cd spec/dummy && db:create && db:migrate)

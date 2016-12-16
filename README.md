@@ -1,4 +1,5 @@
 # French Toast
+[![Build Status](https://travis-ci.org/thoughtbot/french_toast.svg?branch=master)](https://travis-ci.org/thoughtbot/french_toast)
 
 Communicate information about background jobs.
 

@@ -1,0 +1,12 @@
+branches:
+  only:
+    - master
+cache:
+  - bundler
+language:
+  - ruby
+rvm:
+  - 2.2.6
+  - 2.3.3
+before_script:
+  - "cd spec/dummy && bundle exec rake db:create db:migrate && cd -"

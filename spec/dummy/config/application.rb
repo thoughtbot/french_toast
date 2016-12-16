@@ -11,6 +11,8 @@ require "sprockets/railtie"
 Bundler.require(*Rails.groups)
 module Snappy
   class Application < Rails::Application
+    ENV["SECRET_KEY_BASE"] = "secretkey"
+
     config.assets.quiet = true
     config.generators do |generate|
       generate.helper false
@@ -23,5 +25,6 @@ module Snappy
     end
     config.action_controller.action_on_unpermitted_parameters = :raise
     config.active_job.queue_adapter = :delayed_job
+    config.eager_load = false
   end
 end
