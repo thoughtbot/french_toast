@@ -1,5 +1,6 @@
 # French Toast
 [![Build Status](https://travis-ci.org/thoughtbot/french_toast.svg?branch=master)](https://travis-ci.org/thoughtbot/french_toast)
+[![Code Climate](https://codeclimate.com/github/thoughtbot/french_toast/badges/gpa.svg)](https://codeclimate.com/github/thoughtbot/french_toast)
 
 Communicate information about background jobs.
 
