@@ -1,7 +1,9 @@
 App.cable.subscriptions.create({
   channel: "NotifierChannel"
 }, {
-  received: function(data) {
-    $("[data-french-toast-message]").text(data);
+  received: function(content) {
+    if (content !== undefined) {
+      $("[data-french-toast-content]").html(content);
+    }
   }
 });

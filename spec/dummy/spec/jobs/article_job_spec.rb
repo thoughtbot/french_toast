@@ -18,7 +18,8 @@ describe ArticleJob do
 
         ArticleJob.new.perform(session_key, article_params)
 
-        expect(notifier).to have_received(:notify).with(article_params)
+        expect(notifier).
+          to have_received(:notify).with(:article_created)
       end
 
       def stub_notifier!

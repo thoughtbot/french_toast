@@ -2,4 +2,9 @@
 
 bundle install
 
-(cd spec/dummy && db:create && db:migrate)
+(
+cd spec/dummy && \
+  rake db:create && \
+  rails g french_toast:install && \
+  rake db:migrate 
+)

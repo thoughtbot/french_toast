@@ -13,3 +13,4 @@
 /tmp/*
 snappy_test
 snappy_development
+Gemfile.lock

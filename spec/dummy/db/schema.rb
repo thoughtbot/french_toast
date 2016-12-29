@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161209214134) do
+ActiveRecord::Schema.define(version: 20170616180507) do
 
   create_table "articles", force: :cascade do |t|
     t.text     "author",     null: false
@@ -38,10 +38,10 @@ ActiveRecord::Schema.define(version: 20161209214134) do
   end
 
   create_table "last_notifications", force: :cascade do |t|
-    t.string   "data"
-    t.string   "session"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "session"
+    t.string   "data"
     t.index ["session"], name: "index_last_notifications_on_session"
   end
 

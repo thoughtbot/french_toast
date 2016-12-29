@@ -1,4 +1,3 @@
 module FrenchToast
-  class LastNotification < ApplicationRecord
-  end
+  class LastNotification < ActiveRecord::Base; end
 end

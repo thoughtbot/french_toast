@@ -1,9 +1,12 @@
 source "https://rubygems.org"
 
-gem "jquery-rails"
+gem "delayed_job_active_record"
 gem "french_toast", path: "../.."
+gem "jquery-rails"
 gem "puma"
 gem "rails", "~> 5.0.0"
+gem "redis"
+gem "resque"
 gem "sass-rails"
 gem "simple_form"
 gem "sprockets"
@@ -16,7 +19,7 @@ end
 
 group :test do
   gem "capybara-webkit"
-  gem "email_spec"
   gem "database_cleaner"
+  gem "email_spec"
   gem "timecop"
 end
