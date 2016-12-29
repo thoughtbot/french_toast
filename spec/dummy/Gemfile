@@ -2,9 +2,11 @@ source "https://rubygems.org"
 
 gem "jquery-rails"
 gem "french_toast", path: "../.."
+gem "puma"
 gem "rails", "~> 5.0.0"
-gem "redis"
+gem "sass-rails"
 gem "simple_form"
+gem "sprockets"
 gem "sqlite3"
 
 group :development, :test do

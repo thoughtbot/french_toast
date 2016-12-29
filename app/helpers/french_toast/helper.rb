@@ -6,7 +6,9 @@ module FrenchToast
 
     def french_toast_message
       @french_toast_message ||=
-        FrenchToast::LastNotification.find_or_create_by(session: session_key).data
+        FrenchToast::LastNotification.find_or_create_by(
+          session: cookies[:session_key],
+        ).data
     end
   end
 end

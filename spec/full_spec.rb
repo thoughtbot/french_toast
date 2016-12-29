@@ -6,7 +6,8 @@ RSpec.describe "dummy app specs" do
     project_path = "spec/dummy"
     Dir.chdir(project_path) do
       Bundler.with_clean_env do
-        expect(`./bin/rake`).to include('0 failures')
+        `bundle install`
+        expect(`./bin/rake`).to include("0 failures")
       end
     end
   end

@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  helper FrenchToast::Helper
+
   protect_from_forgery with: :exception
 
   before_action :session_key

@@ -5,7 +5,6 @@ gemspec
 
 gem "jquery-rails"
 gem "rails", "~> 5.0.0"
-gem "redis"
 gem "simple_form"
 gem "sqlite3"
 
