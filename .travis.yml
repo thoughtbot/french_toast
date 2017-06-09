@@ -1,10 +1,11 @@
 language:
   - ruby
 rvm:
-  - 2.2.6
-  - 2.3.3
+  - 2.2.7
+  - 2.3.4
+  - 2.4.1
 before_script:
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
   - sleep 3
-  - "cd spec/dummy && bundle exec rake db:create db:migrate && cd -"
+  - "cd spec/dummy && rails g french_toast:install && bundle exec rake db:create db:migrate && cd -"
