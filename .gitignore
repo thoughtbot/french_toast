@@ -10,3 +10,4 @@
 /tmp/
 spec/examples.txt
 /spec/dummy/.byebug_history
+db/migrate/*_create_last_notifications.rb

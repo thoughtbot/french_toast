@@ -1,10 +1,14 @@
 #!/bin/sh
 
+export RAILS_ENV=test
+
 bundle install
 
 (
 cd spec/dummy && \
-  rake db:create && \
-  rails g french_toast:install && \
-  rake db:migrate 
+  rm db/migrate/*_create_last_notifications.rb
+  bundle install && \
+  rake db:environment:set db:drop db:create && \
+  rails generate french_toast:install && \
+  rake db:migrate
 )

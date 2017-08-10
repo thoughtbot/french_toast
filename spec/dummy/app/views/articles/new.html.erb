@@ -1,8 +1,25 @@
-<%= simple_form_for @article do |form| %>
-  <%= form.input :author %>
-  <%= form.input :title %>
-  <%= form.input :body %>
-  <%= form.input :tags %>
-  <%= form.input :email %>
-  <%= form.submit "Create article" %>
+<%= form_for @article do |form| %>
+  <div>
+    <%= form.label :author %>
+    <%= form.text_field :author %>
+  </div>
+  <div>
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+  <div>
+    <%= form.label :body %>
+    <%= form.text_area :body %>
+  </div>
+  <div>
+    <%= form.label :tags %>
+    <%= form.text_field :tags %>
+  </div>
+  <div>
+    <%= form.label :email %>
+    <%= form.email_field :email %>
+  </div>
+  <div>
+    <%= form.submit "Create article" %>
+  </div>
 <% end %>
