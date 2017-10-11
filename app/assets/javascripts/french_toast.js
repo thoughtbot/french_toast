@@ -1,5 +1,5 @@
 App.cable.subscriptions.create({
-  channel: "NotifierChannel"
+  channel: "FrenchToast::NotifierChannel"
 }, {
   received: function(content) {
     if (content !== undefined) {

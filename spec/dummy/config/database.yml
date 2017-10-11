@@ -1,6 +1,10 @@
-test:
+test: &default
   adapter: sqlite3
   database: snappy_test
   encoding: utf8
   min_messages: warning
   timeout: 5000
+
+development:
+  <<: *default
+  database: snappy_development
