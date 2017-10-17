@@ -1,6 +1,6 @@
 require "rails_helper"
 
-feature "user sees flash from created article" do
+RSpec.feature "user sees flash from created article" do
   scenario "asynchronously", :js do
     _processed_html = "<p>Your article has been successfully created</p>"
     visit root_path

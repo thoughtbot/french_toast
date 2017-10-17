@@ -1,5 +1,5 @@
-require_relative 'boot'
-require "rails"
+require File.expand_path("../boot", __FILE__)
+
 require "active_model/railtie"
 require "active_job/railtie"
 require "active_record/railtie"
@@ -8,7 +8,9 @@ require "action_mailer/railtie"
 require "action_view/railtie"
 require "action_cable/engine"
 require "sprockets/railtie"
+
 Bundler.require(*Rails.groups)
+
 module Snappy
   class Application < Rails::Application
     ENV["SECRET_KEY_BASE"] = "secretkey"

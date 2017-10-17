@@ -13,25 +13,25 @@
 ActiveRecord::Schema.define(version: 20171006171609) do
 
   create_table "articles", force: :cascade do |t|
-    t.text     "author",     null: false
-    t.text     "tags",       null: false
-    t.text     "body",       null: false
-    t.text     "title",      null: false
+    t.text "author", null: false
+    t.text "tags", null: false
+    t.text "body", null: false
+    t.text "title", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string   "email"
+    t.string "email"
   end
 
   create_table "delayed_jobs", force: :cascade do |t|
-    t.integer  "priority",   default: 0, null: false
-    t.integer  "attempts",   default: 0, null: false
-    t.text     "handler",                null: false
-    t.text     "last_error"
+    t.integer "priority", default: 0, null: false
+    t.integer "attempts", default: 0, null: false
+    t.text "handler", null: false
+    t.text "last_error"
     t.datetime "run_at"
     t.datetime "locked_at"
     t.datetime "failed_at"
-    t.string   "locked_by"
-    t.string   "queue"
+    t.string "locked_by"
+    t.string "queue"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.index ["priority", "run_at"], name: "delayed_jobs_priority"
@@ -40,8 +40,8 @@ ActiveRecord::Schema.define(version: 20171006171609) do
   create_table "last_notifications", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string   "session"
-    t.string   "data"
+    t.string "session"
+    t.string "data"
     t.index ["session"], name: "index_last_notifications_on_session"
   end
 

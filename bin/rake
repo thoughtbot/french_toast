@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require File.expand_path("../../spec/dummy/config/boot", __FILE__)
+require "rake"
+Rake.application.run
