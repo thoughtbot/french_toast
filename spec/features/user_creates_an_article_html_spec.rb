@@ -2,11 +2,12 @@ require "rails_helper"
 
 RSpec.feature "user sees flash from created article" do
   scenario "asynchronously", :js do
-    _processed_html = "<p>Your article has been successfully created</p>"
+    title = "True Facts"
+    processed_content = "'#{title}' article has been successfully created"
     visit root_path
     click_link "Add"
 
-    fill_in :article_title, with: "True Facts"
+    fill_in :article_title, with: title
     fill_in :article_body, with: "This is real news"
     fill_in :article_author, with: "Bannon"
     fill_in :article_tags, with: "facts, news, totally real"
@@ -16,21 +17,24 @@ RSpec.feature "user sees flash from created article" do
     expect(page).to have_content "Articles"
     within ".french-toast-c-content" do
       expect(page).not_to have_css("p")
+      expect(page).not_to have_content(processed_content)
     end
 
     perform_enqueued_jobs
 
     within ".french-toast-c-content" do
       expect(page).to have_css("p")
+      expect(page).to have_content(processed_content)
     end
   end
 
   scenario "synchronously" do
-    processed_article_html = "<p>Your article has been successfully created</p>"
+    title = "True Facts"
+    processed_html = "<p>'#{title}' article has been successfully created</p>"
     visit root_path
     click_link "Add article"
 
-    fill_in :article_title, with: "True Facts"
+    fill_in :article_title, with: title
     fill_in :article_body, with: "This is real news"
     fill_in :article_author, with: "Bannon"
     fill_in :article_tags, with: "facts, news, totally real"
@@ -39,12 +43,12 @@ RSpec.feature "user sees flash from created article" do
 
     expect(page).to have_content "Articles"
     expect(page).to have_content "Refresh page for updates"
-    expect(page.html).not_to include processed_article_html
+    expect(page.html).not_to include processed_html
 
     perform_enqueued_jobs
 
     visit root_path
 
-    expect(page.html).to include processed_article_html
+    expect(page.html).to include processed_html
   end
 end

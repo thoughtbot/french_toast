@@ -4,8 +4,8 @@ module FrenchToast
       @session_key = session_key
     end
 
-    def notify(partial_name)
-      processed_payload = process(partial_name)
+    def notify(partial_name, locals: {})
+      processed_payload = process(partial_name, locals)
       store(processed_payload)
       notify_by_action_cable(processed_payload)
     end
@@ -14,8 +14,11 @@ module FrenchToast
 
     attr_reader :session_key
 
-    def process(partial_name)
-      ApplicationController.render(partial: "french_toast/#{partial_name}")
+    def process(partial_name, locals)
+      ApplicationController.render(
+        partial: "french_toast/#{partial_name}",
+        locals: locals,
+      )
     end
 
     def notify_by_action_cable(payload)
