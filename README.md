@@ -53,7 +53,7 @@ Use `#notify` with the name of the template to be rendered to render that templa
 # something_job.rb
 class SomethingJob
   def perform
-    `FrenchToast`.notify("foo", payload: { your_name: "Jim-bob" })
+    FrenchToast.notify("foo", payload: { your_name: "Jim-bob" })
   end
 end
 ```
@@ -76,7 +76,7 @@ Referencing a template the same way, provide `name` attribute to `#notify` will 
 ```ruby
 #... something_job.rb
 def perform
-  `FrenchToast`.notify("foo", name: :post, payload: {})
+  FrenchToast.notify("foo", name: :post, payload: {})
 end
 ```
 
@@ -124,7 +124,7 @@ Thank you, [contributors]!
 
 ## License
 
-French Toast is Copyright (c) 2016 thoughtbot, inc.
+French Toast is Copyright (c) 2016-2017 thoughtbot, inc.
 It is free software, and may be redistributed
 under the terms specified in the [LICENSE] file.
 
