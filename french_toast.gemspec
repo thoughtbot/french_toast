@@ -30,14 +30,15 @@ Gem::Specification.new do |spec|
   end
 
   spec.add_dependency "rails", "~> 5.0"
+  spec.add_dependency "redis", "~> 3.0"
   spec.add_development_dependency "bundler", "~> 1.13"
   spec.add_development_dependency "capybara-webkit"
   spec.add_development_dependency "database_cleaner", "~> 1.6"
   spec.add_development_dependency "delayed_job_active_record", "~> 4.1"
   spec.add_development_dependency "jquery-rails", "~> 4.3"
   spec.add_development_dependency "puma"
+  spec.add_development_dependency "pry"
   spec.add_development_dependency "rake", "~> 10.0"
-  spec.add_development_dependency "redis", "~> 3.0"
   spec.add_development_dependency "rspec", "~> 3.5"
   spec.add_development_dependency "rspec-rails", "~> 3.6"
   spec.add_development_dependency "sprockets", "~> 3.7"

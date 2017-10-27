@@ -26,6 +26,7 @@ RSpec.feature "user sees flash from created article" do
       expect(page).to have_css("p")
       expect(page).to have_content(processed_content)
     end
+    expect(FrenchToast::LastNotification.all).to be_empty
   end
 
   scenario "synchronously" do
@@ -50,5 +51,6 @@ RSpec.feature "user sees flash from created article" do
     visit root_path
 
     expect(page.html).to include processed_html
+    expect(FrenchToast::LastNotification.all).to be_empty
   end
 end
