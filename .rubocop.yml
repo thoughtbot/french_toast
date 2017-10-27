@@ -1,0 +1,5 @@
+inherit_from:
+  - $HOME/.rubocop.yml
+
+Layout/IndentArray:
+  EnforcedStyle: consistent
